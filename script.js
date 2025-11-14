@@ -1,55 +1,84 @@
-const epis = [
-  { numero: 1, nome: "Capacete de segurança", imagem: "img/1.png", texto: "Serve para proteger a cabeça contra impactos e quedas de objetos" },
-  { numero: 2, nome: "Óculos de proteção", imagem: "img/2.png", texto: "Usado para evitar lesões nos olhos por partículas e respingos" },
-  { numero: 3, nome: "Protetor auricular tipo plug", imagem: "img/3.png", texto: "Serve para reduzir ruídos e proteger a audição" },
-  { numero: 4, nome: "Protetor auricular tipo concha", imagem: "img/4.png", texto: "Usado para isolar sons intensos e contínuos" },
-  { numero: 5, nome: "Luva de raspa", imagem: "img/5.png", texto: "Usada para proteger as mãos contra abrasão e calor" },
-  { numero: 6, nome: "Luva de vaqueta", imagem: "img/6.png", texto: "Usada para proteger as mãos" },
-  { numero: 7, nome: "Luva de borracha", imagem: "img/7.png", texto: "Serve para proteger contra produtos químicos e líquidos" },
-  { numero: 8, nome: "Luva nitrílica", imagem: "img/8.png", texto: "Usada para resistência a óleos e solventes" },
-  { numero: 9, nome: "Luva térmica", imagem: "img/9.png", texto: "Serve para proteger contra altas ou baixas temperaturas" },
-  { numero: 10, nome: "Luva antiestática", imagem: "img/10.png", texto: "Usada para evitar descargas eletrostáticas" },
-  { numero: 11, nome: "Luva anticorte", imagem: "img/11.png", texto: "Serve para proteger as mãos contra cortes e perfurações" },
-  { numero: 12, nome: "Luva para eletricista", imagem: "img/12.png", texto: "Usada para isolar contra choques elétricos" },
-  { numero: 13, nome: "Luva de malha de aço", imagem: "img/13.png", texto: "Usada para proteção contra cortes" },
-  { numero: 14, nome: "Máscara PFF1", imagem: "img/14.png", texto: "Serve para filtrar poeiras e névoas" },
-  { numero: 15, nome: "Máscara PFF2", imagem: "img/15.png", texto: "Usada para proteger contra poeiras e névoas" },
-  { numero: 16, nome: "Respirador semifacial", imagem: "img/16.png", texto: "Serve para filtrar vapores, gases e partículas" },
-  { numero: 17, nome: "Respirador facial completo", imagem: "img/17.png", texto: "Usado para proteger contra agentes nocivos" },
-  { numero: 18, nome: "Filtro químico para respirador", imagem: "img/18.png", texto: "Serve para neutralizar gases e vapores perigosos" },
-  { numero: 19, nome: "Avental de PVC", imagem: "img/19.png", texto: "Usado para proteger contra produtos químicos líquidos" },
-  { numero: 20, nome: "Avental de raspa", imagem: "img/20.png", texto: "Usado para resistir ao calor e respingos metálicos" },
-  { numero: 21, nome: "Avental de vaqueta", imagem: "img/21.png", texto: "Usado para proteger o tronco em serviços com atrito" },
-  { numero: 22, nome: "Avental térmico", imagem: "img/22.png", texto: "Usado para isolar o calor em atividades com alta temperatura" },
-  { numero: 23, nome: "Bota de PVC", imagem: "img/23.png", texto: "Usada para proteger os pés em locais úmidos" },
-  { numero: 24, nome: "Bota com biqueira de aço", imagem: "img/24.png", texto: "Serve para proteger os pés contra impactos" },
-  { numero: 25, nome: "Bota antiderrapante", imagem: "img/25.png", texto: "Usada para evitar escorregões em pisos molhados" },
-  { numero: 26, nome: "Sapato de segurança", imagem: "img/26.png", texto: "Serve para proteger os pés em ambientes industriais" },
-  { numero: 27, nome: "Perneira de raspa", imagem: "img/27.png", texto: "Usada para proteger as pernas contra faíscas e cortes" },
-  { numero: 28, nome: "Calça anti-chamas", imagem: "img/28.png", texto: "Serve para resistir ao fogo e altas temperaturas" },
-  { numero: 29, nome: "Jaqueta anti-chamas", imagem: "img/29.png", texto: "Usada para proteger o tronco contra queimaduras" },
-  { numero: 30, nome: "Cinturão tipo paraquedista", imagem: "img/30.png", texto: "Usado para evitar quedas em trabalho em altura" },
-  { numero: 31, nome: "Capacete com jugular", imagem: "img/31.png", texto: "Serve para manter proteger a cabeça" },
-  { numero: 32, nome: "Protetor facial", imagem: "img/32.png", texto: "Usado para proteger o rosto contra respingos e impactos" },
-  { numero: 33, nome: "Óculos com lente incolor", imagem: "img/33.png", texto: "Usado para proteger os olhos" },
-  { numero: 34, nome: "Óculos com lente escura", imagem: "img/34.png", texto: "Usado para proteger contra claridade e solda" },
-  { numero: 35, nome: "Óculos panorâmico", imagem: "img/35.png", texto: "Serve para oferecer ampla visão com proteção total" },
-  { numero: 36, nome: "Máscara de solda", imagem: "img/36.png", texto: "Usada para bloquear luz intensa e faíscas da solda" },
-  { numero: 37, nome: "Máscara de solda automática", imagem: "img/37.png", texto: "Serve para escurecer automaticamente durante a solda" },
-  { numero: 38, nome: "Colete refletivo", imagem: "img/38.png", texto: "Usado para aumentar a visibilidade do trabalhador" },
-  { numero: 39, nome: "Capa de chuva", imagem: "img/39.png", texto: "Usada para manter o corpo seco em ambientes externos" },
-  { numero: 40, nome: "Camisa de manga longa", imagem: "img/40.png", texto: "Usada para proteger os braços contra riscos leves" },
-  { numero: 41, nome: "Kit de primeiros socorros individual", imagem: "img/41.png", texto: "Serve para atender ferimentos leves rapidamente" },
-  { numero: 42, nome: "Extintor de incêndio", imagem: "img/42.png", texto: "Usado para apagar focos de incêndio iniciais" },
-  { numero: 43, nome: "Chuveiro de emergência", imagem: "img/43.png", texto: "Serve para lavar o corpo em casos de contaminação" },
-  { numero: 44, nome: "Mangueira de Hidrante", imagem: "img/44.png", texto: "Usada para combater incêndios de forma coletiva" },
-  { numero: 45, nome: "Placa uso obrigatório de EPI", imagem: "img/45.png", texto: "Serve para sinalizar onde o uso de EPI é obrigatório" },
-  { numero: 46, nome: "Placa proibido fumar", imagem: "img/46.png", texto: "Usada para proibir o fumo em locais perigosos" },
-  { numero: 47, nome: "Placa risco 220 volts", imagem: "img/47.png", texto: "Serve para alertar sobre risco de choque elétrico" },
-  { numero: 48, nome: "Placa proibido uso do celular", imagem: "img/48.png", texto: "Usada para evitar distrações em áreas críticas" },
-  { numero: 49, nome: "Placa aviso de acesso restrito", imagem: "img/49.png", texto: "Serve para restringir entrada a pessoas autorizadas" },
-  { numero: 50, nome: "Placa use o corrimão", imagem: "img/50.png", texto: "Usada para orientar segurança em escadas" },
-  { numero: 51, nome: "Placa piso escorregadio", imagem: "img/51.png", texto: "Serve para alertar sobre risco de escorregamento" }
+const epis =  [
+  { numero: 1, nome: "4A's Controle de Pragas", imagem: "img/1.jpg", texto: "" },
+  { numero: 2, nome: "Controle de Roedores", imagem: "img/2.jpg", texto: "" },
+  { numero: 3, nome: "Controle de Baratas", imagem: "img/3.jpg", texto: "" },
+  { numero: 4, nome: "Armadilha de Pombos", imagem: "img/4.jpg", texto: "" },
+  { numero: 5, nome: "Calça de uniforme correta", imagem: "img/5.jpg", texto: "" },
+  { numero: 6, nome: "Camisa de uniforme correta", imagem: "img/6.jpg", texto: "" },
+  { numero: 7, nome: "Check list de limpeza", imagem: "img/7.jpg", texto: "" },
+  { numero: 8, nome: "Perigo Físico - Fragmento de vidro", imagem: "img/8.jpg", texto: "" },
+  { numero: 9, nome: "Perigo Físico - Fragmento de madeira", imagem: "img/9.jpg", texto: "" },
+  { numero: 10, nome: "Perigo Físico – Metal", imagem: "img/10.jpg", texto: "" },
+  { numero: 11, nome: "Perigo Químico – Produto de Limpeza", imagem: "img/11.jpg", texto: "" },
+  { numero: 12, nome: "Perigo Químico – Lubrificante de Equipamentos", imagem: "img/12.jpg", texto: "" },
+  { numero: 13, nome: "Perigo Biológico - Microorganismo", imagem: "img/13.jpg", texto: "" },
+  { numero: 14, nome: "Análise de Dimensões", imagem: "img/14.jpg", texto: "" },
+  { numero: 15, nome: "Análise Físico-Química", imagem: "img/15.jpg", texto: "" },
+  { numero: 16, nome: "Análise de Controle de temperatura", imagem: "img/16.jpg", texto: "" },
+  { numero: 17, nome: "Análise de Densidade", imagem: "img/17.jpg", texto: "" },
+  { numero: 18, nome: "Equipamento - Medidor de AW", imagem: "img/18.jpg", texto: "" },
+  { numero: 19, nome: "Equipamento - Medidor de Umidade", imagem: "img/19.jpg", texto: "" },
+  { numero: 20, nome: "Equipamento – Medidor de COF", imagem: "img/20.jpg", texto: "" },
+  { numero: 21, nome: "Equipamento – NIR", imagem: "img/21.jpg", texto: "" },
+  { numero: 22, nome: "Matéria-prima – Milho", imagem: "img/22.jpg", texto: "" },
+  { numero: 23, nome: "Matéria-prima – Sorgo", imagem: "img/23.jpg", texto: "" },
+  { numero: 24, nome: "Matéria-prima – Farelo de Trigo", imagem: "img/24.jpg", texto: "" },
+  { numero: 25, nome: "Matéria-prima – Óleo de Aves", imagem: "img/25.jpg", texto: "" },
+  { numero: 26, nome: "Matéria-prima – Cenoura Desidratada", imagem: "img/26.jpg", texto: "" },
+  { numero: 27, nome: "Matéria-prima – Polpa de Beterraba", imagem: "img/27.jpg", texto: "" },
+  { numero: 28, nome: "Norma – Proibido Alimentos", imagem: "img/28.jpg", texto: "" },
+  { numero: 29, nome: "Norma – Proibido Celulares", imagem: "img/29.jpg", texto: "" },
+  { numero: 30, nome: "Norma – Proibido Colares", imagem: "img/30.jpg", texto: "" },
+  { numero: 31, nome: "Norma – Proibido Pulseiras ou Brincos", imagem: "img/31.jpg", texto: "" },
+  { numero: 32, nome: "Norma – Proibido Relógios ou Anéis", imagem: "img/32.jpg", texto: "" },
+  { numero: 33, nome: "Produto Acabado – QSGC", imagem: "img/33.jpg", texto: "" },
+  { numero: 34, nome: "Produto Acabado – QGGC-MC", imagem: "img/34.jpg", texto: "" },
+  { numero: 35, nome: "Produto Acabado - QSGC-SBD", imagem: "img/35.jpg", texto: "" },
+  { numero: 36, nome: "Produto Acabado - QSSRP", imagem: "img/36.jpg", texto: "" },
+  { numero: 37, nome: "Produto Acabado - QSTARMG", imagem: "img/37.jpg", texto: "" },
+  { numero: 38, nome: "Produto Acabado - QSDA", imagem: "img/38.jpg", texto: "" },
+  { numero: 39, nome: "Produto Acabado - QLFRMG", imagem: "img/39.jpg", texto: "" },
+  { numero: 40, nome: "Produto Acabado - QSTPOWER", imagem: "img/40.jpg", texto: "" },
+  { numero: 41, nome: "Produto Acabado – QSTGC-CARNE", imagem: "img/41.jpg", texto: "" },
+  { numero: 42, nome: "Produto Acabado - QSAL", imagem: "img/42.jpg", texto: "" },
+  { numero: 43, nome: "Produto Acabado - QGARMG", imagem: "img/43.jpg", texto: "" },
+  { numero: 44, nome: "Produto Acabado – QGARP", imagem: "img/44.jpg", texto: "" },
+  { numero: 45, nome: "Embalagem – QSFRMG", imagem: "img/45.jpg", texto: "" },
+  { numero: 46, nome: "Embalagem – QSGC", imagem: "img/46.jpg", texto: "" },
+  { numero: 47, nome: "Embalagem - QSGCS+7", imagem: "img/47.jpg", texto: "" },
+  { numero: 48, nome: "Embalagem – QSTGCMC", imagem: "img/48.jpg", texto: "" },
+  { numero: 49, nome: "Embalagem – QSTARP", imagem: "img/49.jpg", texto: "" },
+  { numero: 50, nome: "Embalagem – QSTFRP", imagem: "img/50.jpg", texto: "" },
+  { numero: 51, nome: "Embalagem – QLFRMG", imagem: "img/51.jpg", texto: "" },
+  { numero: 52, nome: "Embalagem - QLGC-AS", imagem: "img/52.jpg", texto: "" },
+  { numero: 53, nome: "Embalagem – QGARP", imagem: "img/53.jpg", texto: "" },
+  { numero: 54, nome: "Embalagem – QGGAP", imagem: "img/54.jpg", texto: "" },
+  { numero: 55, nome: "Embalagem – QGGAC", imagem: "img/55.jpg", texto: "" },
+  { numero: 56, nome: "Símbolo – BPF", imagem: "img/56.jpg", texto: "" },
+  { numero: 57, nome: "Símbolo – HACCP", imagem: "img/57.jpg", texto: "" },
+  { numero: 58, nome: "Símbolo – MAPA", imagem: "img/58.jpg", texto: "" },
+  { numero: 59, nome: "Símbolo – SIF", imagem: "img/59.jpg", texto: "" },
+  { numero: 60, nome: "Símbolo – PPHO", imagem: "img/60.jpg", texto: "" },
+  { numero: 61, nome: "Símbolo – APPCC", imagem: "img/61.jpg", texto: "" },
+  { numero: 62, nome: "Descarte correto de resíduo", imagem: "img/62.jpg", texto: "" },
+  { numero: 63, nome: "Descarte incorreto de resíduo", imagem: "img/63.jpg", texto: "" },
+  { numero: 64, nome: "Higinização correta das mãos", imagem: "img/64.jpg", texto: "" },
+  { numero: 65, nome: "Treinamento", imagem: "img/65.jpg", texto: "" },
+  { numero: 66, nome: "Uso de touca", imagem: "img/66.jpg", texto: "" },
+  { numero: 67, nome: "Limpeza Industrial", imagem: "img/67.jpg", texto: "" },
+  { numero: 68, nome: "5S - Senso de Ordenação", imagem: "img/68.jpg", texto: "" },
+  { numero: 69, nome: "5S - Senso de Limpeza", imagem: "img/69.jpg", texto: "" },
+  { numero: 70, nome: "5S - Senso de Utilização", imagem: "img/70.jpg", texto: "" },
+  { numero: 71, nome: "5S - Senso de Disciplina", imagem: "img/71.jpg", texto: "" },
+  { numero: 72, nome: "5S - Senso de Padronização", imagem: "img/72.jpg", texto: "" },
+  { numero: 73, nome: "Ferramenta da Qualidade – Pareto", imagem: "img/73.jpg", texto: "" },
+  { numero: 74, nome: "Ferramenta da Qualidade – Fluxograma", imagem: "img/74.jpg", texto: "" },
+  { numero: 75, nome: "Ferramenta da Qualidade – Histograma", imagem: "img/75.jpg", texto: "" },
+  { numero: 76, nome: "Ferramenta da Qualidade - Folhade Verificação", imagem: "img/76.jpg", texto: "" },
+  { numero: 77, nome: "Ferramenta da Qualidade – Ishikawa", imagem: "img/77.jpg", texto: "" },
+  { numero: 78, nome: "Ferramenta da Qualidade - Carta de Controle", imagem: "img/78.jpg", texto: "" },
+  { numero: 79, nome: "Ferramenta da Qualidade - Diagrama de Dispersão", imagem: "img/79.jpg", texto: "" },
+  { numero: 80, nome: "Valor Qualidade", imagem: "img/80.jpg", texto: "" }
 ];
 
 
@@ -60,12 +89,12 @@ const epis = [
       const epi = epis.find(e => e.numero === numero);
 
       if (!epi) {
-        alert("EPI não encontrado!");
+        alert("Número não encontrado!");
         return;
       }
 
       if (sorteados.has(epi.numero)) {
-        alert("Este EPI já foi mostrado!");
+        alert("Este número já foi mostrado!");
         return;
       }
 
@@ -73,7 +102,7 @@ const epis = [
       document.getElementById("fotoEPI").src = epi.imagem;
       document.getElementById("numeroEPI").innerText = `Nº ${epi.numero}`;
       document.getElementById("nomeEPI").innerText = epi.nome.toUpperCase();
-      document.getElementById("texto").innerText = epi.texto.toUpperCase();
+      //document.getElementById("texto").innerText = epi.texto.toUpperCase();
       document.getElementById("historicoEPI").style.backgroundColor="white";
 
       // Adiciona ao histórico
