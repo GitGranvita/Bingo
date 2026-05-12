@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Bingo</title>
+  <title>Bingo de EPI</title>
   <link rel="stylesheet" href="css.css">
   <script type="text/javascript" src="script.js"></script>
 
@@ -14,22 +14,20 @@
 
   <!-- Card do EPI sorteado -->
   <div class="sorteado" id="cardEPI">
-    <div class="numero-epi" id="numeroEPI"></div>
-    <img  class="foto-epi" id="fotoEPI">
-    <div class="nome-epi" id="nomeEPI"></div>
-    <br>
-    <div class="desc-epi" id="texto"></div>
+    <img src="img/placeholder.png"  class="foto-epi" id="fotoEPI">
+    <div class="numero-epi" id="numeroEPI">Nº --</div>
+    <div class="nome-epi" id="nomeEPI">---</div>
   </div>
 
   <!-- Histórico -->
-  <div class="historico" id="historicoEPI">
-  </div>
+  <h2> Números sorteados</h2>
+  <div class="historico" id="historicoEPI"></div>
 
-  <!-- Botão fixo no rodapé -->
-  <div class="botao-fixo">
-    <input type="number" id="numeroInput" placeholder="Nº Sorteado" min="1" max="55">
-    <button onclick="mostrarEPI()">Mostrar</button>
-  </div>
+<div class="botao-fixo">
+  <input type="number" id="numeroInput" placeholder="Nº" min="1" max="55" 
+         onkeypress="if(event.key === 'Enter') mostrarEPI()">
+  <button onclick="mostrarEPI()">Mostrar</button>
+</div>
   
 
 
