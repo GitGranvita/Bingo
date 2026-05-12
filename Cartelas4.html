@@ -106,20 +106,25 @@
   <div id="container"></div>
 
   <script>
-    const epis = [
-      "Capacete de segurança", "Óculos de proteção", "Protetor auricular tipo plug", "Protetor auricular tipo concha",
-      "Luva de raspa", "Luva de vaqueta", "Luva de borracha", "Luva nitrílica", "Luva térmica", "Luva antiestática",
-      "Luva anticorte", "Luva para eletricista", "Luva de malha de aço", "Máscara PFF1", "Máscara PFF2",
-      "Respirador semifacial", "Respirador facial completo", "Filtro químico para respirador", "Avental de PVC",
-      "Avental de raspa", "Avental de vaqueta", "Avental térmico", "Bota de PVC", "Bota com biqueira de aço",
-      "Bota antiderrapante", "Sapato de segurança", "Perneira de raspa", "Calça anti-chamas", "Jaqueta anti-chamas",
-      "Cinturão tipo paraquedista", "Capacete com jugular", "Protetor facial", "Óculos com lente incolor",
-      "Óculos com lente escura", "Óculos panorâmico", "Máscara de solda", "Máscara de solda automática",
-      "Colete refletivo", "Capa de chuva", "Camisa de manga longa", "Kit de primeiros socorros individual",
-      "Extintor de incêndio", "Chuveiro de emergência", "Mangueira de Hidrante", "Placa uso obrigatório de EPI",
-      "Placa proibido fumar", "Placa risco 220 volts", "Placa proibido uso do celular", "Placa aviso de acesso restrito",
-      "Placa use o corrimão", "Placa piso escorregadio"
-    ];
+  const epis = [
+  "Papel", "Plastico", "Organico", "Vidro", "Metal", "Varredura", 
+  "Residuos Perigosos", "Rejeito", "ETE", "Aluminio", "Oleo usado", 
+  "Solo", "Cinzas", "Agua", "Rios", "Chuva", "Arvores", "Semente", 
+  "Oleo Lubrificante usado", "Raizes", "Folhas", "Sol", "Planeta Terra", 
+  "MTR", "Container de plastico", "Tanque", "Coleta de Efluente", 
+  "Madeira", "Residuos eletronicos", "Caçamba Roll-on", "Caçamba de rejeito", 
+  "Consumo consciente", "Caçamba de Varredura", "Vento", "Plástico Strech", 
+  "ANA", "Bombona de Rs", "Compostagem", "Container de papelão", 
+  "Container de rejeito", "Caçamba de metal", "Fauna", "Poluição visual", 
+  "Dia mundial de meio ambiente", "Coletor de Pilhas", "Reciclagem", 
+  "Ibama", "RAPP", "Big Bag", "Lixeira de Infectante", "Descarpack", 
+  "EPI_s contaminados", "53-IBC", "Kit de mitigação ambiental", 
+  "SEMAD", "Outorga", "Poço artesiano", "FDS", "CAR", 
+  "Armazenamento de oleo", "Coprocessamento", "Pallet de contenção", 
+  "Lacre do bem", "Serragem", "Cone de Sinalização", "Aterro Sanitário", 
+  "Armazenamento de resíduos", "Hidrometro", "Horimetro", 
+  "Tanque de equalização", "Pallet"
+];
 
     const totalCartelas = 52;
     const cartelasPorPagina = 4;
@@ -151,7 +156,7 @@
 
       const cartela = document.createElement("div");
       cartela.className = "cartela";
-      cartela.innerHTML = `<div class="titulo">BINGO DA SEGURANÇA - 2025</div>`;
+      cartela.innerHTML = `<div class="titulo">SEMANA DO MEIO AMBIENTE</div>`;
       cartela.appendChild(grade);
 
       return cartela;
