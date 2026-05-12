@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Bingo de EPI</title>
+  <link rel="stylesheet" href="css.css">
+  <script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+
+  <!-- Imagem principal
+  <img src="logo-bingo.png" alt="Logo Bingo" class="imagem-central"> -->
+
+  <!-- Card do EPI sorteado -->
+  <div class="sorteado" id="cardEPI">
+    <img src="img/placeholder.png"  class="foto-epi" id="fotoEPI">
+    <div class="numero-epi" id="numeroEPI">Nº --</div>
+    <div class="nome-epi" id="nomeEPI">---</div>
+  </div>
+
+  <!-- Histórico -->
+  <h2> Números sorteados</h2>
+  <div class="historico" id="historicoEPI"></div>
+
+<div class="botao-fixo">
+  <input type="number" id="numeroInput" placeholder="Nº" min="1" max="55" 
+         onkeypress="if(event.key === 'Enter') mostrarEPI()">
+  <button onclick="mostrarEPI()">Mostrar</button>
+</div>
+  
+
+
+</body>
+</html>

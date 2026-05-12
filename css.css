@@ -13,14 +13,19 @@
       min-height: 100vh;
       position: relative;
       padding-bottom: 100px; /* espaço para o botão fixo */
-        background-image: url('img/fundo.png'); /* Caminho da imagem */
-        background-size: cover;       /* Faz a imagem cobrir toda a tela */
-        background-position: center;  /* Centraliza a imagem */
-        background-repeat: no-repeat; /* Evita repetição */
-        background-attachment: fixed; /* Mantém a imagem fixa no fundo mesmo com scroll */
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
+       background-image: url('img/fundo.png'); /* ou o caminho da sua imagem */
+       width: 100%;
+       height: 100%;
+      /*  background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: -1;*/
     }
 
     .imagem-central {
@@ -33,16 +38,15 @@
       flex-direction: column;
       align-items: center;
       background: #fff;
-      padding: 30px;
+      padding: 100px;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin-bottom: 20px;
-          max-width: 500px;
     }
 
     .foto-epi {
-      width: 280px;
-      height: 280px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 10px;
@@ -50,31 +54,15 @@
     }
 
     .numero-epi {
-      font-size: 50px;
+      font-size: 28px;
       font-weight: bold;
       color: #222;
       margin-bottom: 5px;
     }
 
-  .nome-epi {
-  display: flex;
-  justify-content: center;     /* Centraliza na horizontal */
-  align-items: center;         /* Centraliza na vertical */
-  font-size: 45px;
-  color: #3f5c5a;
-  font-weight: bold;
-  height: 100%;                /* Garante que o elemento ocupe o espaço vertical do pai */
-  text-align: center;          /* Garante centralização do texto em múltiplas linhas */
-}
-     .desc-epi {
-       display: flex;
-       justify-content: center;     /* Centraliza na horizontal */
-  align-items: center;         /* Centraliza na vertical */
-      font-size: 25px;
-      color: #2ea983;
-      font-weight: bold;
-      height: 100%;                /* Garante que o elemento ocupe o espaço vertical do pai */
-  text-align: center;          /* Garante centralização do texto em múltiplas linhas */
+    .nome-epi {
+      font-size: 22px;
+      color: #555;
     }
 
     .historico {
@@ -86,7 +74,6 @@
         gap: 15px;
         padding: 10px;
         box-sizing: border-box;
-        
       }
       
 
