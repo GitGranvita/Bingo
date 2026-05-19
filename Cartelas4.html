@@ -17,6 +17,45 @@
       page-break-after: always;
     }
   }
+.cartela {
+  width: 130mm;
+  height: 90mm;
+  border: 2px solid #333;
+  padding: 5mm;
+  background: #fff;
+  box-sizing: border-box;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  
+  position: relative; /* ESSENCIAL: diz para a imagem não fugir de dentro da cartela */
+}
+
+/* NOVA CLASSE PARA A IMAGEM */
+.cartela .img-centro {
+   position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 28%;
+  max-height: 90%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4px;
+  flex-grow: 1;
+  user-select: none;
+  margin-top: 19px;
+  
+  position: relative;
+  z-index: 2; /* Camada de cima (Garante que os números fiquem por cima da imagem) */
+}
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -38,19 +77,7 @@
     gap: 8mm 10mm;
     margin-bottom: 10mm;
   }
-  .cartela {
-    width: 130mm;  /* metade da largura da página - margens */
-    height: 90mm;  /* metade da altura da página - margens */
-    border: 2px solid #333;
-    padding: 5mm;
-    background: #fff;
-    box-sizing: border-box;
-    page-break-inside: avoid;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+  
   .titulo {
     font-weight: bold;
     font-size: 14pt;
@@ -59,14 +86,7 @@
     user-select: none;
         color: #2ea983;
   }
-  .grade {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 4px;
-    flex-grow: 1;
-    user-select: none;
-  }
+   
   .item {
     border: 1px solid #ccc;
     text-align: center;
@@ -155,8 +175,8 @@
       });
 
       const cartela = document.createElement("div");
-      cartela.className = "cartela";
-      cartela.innerHTML = `<div class="titulo">SEMANA DO MEIO AMBIENTE</div>`;
+      cartela.className = "cartela"; 
+      cartela.innerHTML = '<img src="img/titulo_cartela.png" class="img-centro">';
       cartela.appendChild(grade);
 
       return cartela;

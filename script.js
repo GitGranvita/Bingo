@@ -75,38 +75,54 @@ const epis = [
   
 
     const sorteados = new Set();
+ 
 
-    function mostrarEPI() {
-      const numero = parseInt(document.getElementById("numeroInput").value);
-      const epi = epis.find(e => e.numero === numero);
+function mostrarEPI() {
+  const numero = parseInt(document.getElementById("numeroInput").value);
+  const epi = epis.find(e => e.numero === numero);
 
-      if (!epi) {
-        alert("EPI não encontrado!");
-        return;
-      }
+  if (!epi) {
+    alert("Número não encontrado!");
+    return;
+  }
 
-      if (sorteados.has(epi.numero)) {
-        alert("Este EPI já foi mostrado!");
-        return;
-      }
+  if (sorteados.has(epi.numero)) {
+    alert("Este número já foi mostrado!");
+    return;
+  }
 
-      // Atualiza o card
-      document.getElementById("fotoEPI").src = epi.imagem;
-      document.getElementById("numeroEPI").innerText = `Nº ${epi.numero}`;
-      document.getElementById("nomeEPI").innerText = epi.nome;
+  // Atualiza o card principal
+  document.getElementById("fotoEPI").src = epi.imagem;
+  document.getElementById("numeroEPI").innerText = `Nº ${epi.numero}`;
+  document.getElementById("nomeEPI").innerText = epi.nome;
+ 
+  const historico = document.getElementById("historicoEPI");
+  const item = document.createElement("div");
+  item.classList.add("item-historico");
+   
+  item.innerHTML = `
+    <span class="btn-excluir" onclick="removerDoHistorico(${epi.numero}, this.parentElement)">✖</span>
+    <img src="${epi.imagem}" alt="${epi.nome}">
+    <div class="numero">${epi.numero}</div>
+    <div class="nome">${epi.nome}</div>
+  `;
+  
+  historico.appendChild(item);
+  historico.scrollLeft = historico.scrollWidth;
 
-      // Adiciona ao histórico
-      const historico = document.getElementById("historicoEPI");
-      const item = document.createElement("div");
-      item.classList.add("item-historico");
-      item.innerHTML = `
-        <img src="${epi.imagem}" alt="${epi.nome}">
-        <div class="numero">${epi.numero}</div>
-        <div class="nome">${epi.nome}</div>
-      `;
-      historico.appendChild(item);
-      historico.scrollLeft = historico.scrollWidth;
-
-      sorteados.add(epi.numero); // marca como já mostrado
-      document.getElementById("numeroInput").value = "";
-    }
+  sorteados.add(epi.numero); // marca como já mostrado
+  document.getElementById("numeroInput").value = "";
+}
+ 
+function removerDoHistorico(numero, elementoHtml) { 
+  sorteados.delete(numero);
+   
+  elementoHtml.remove();
+ 
+  const numeroAtualCard = document.getElementById("numeroEPI").innerText;
+  if (numeroAtualCard === `Nº ${numero}`) {
+    document.getElementById("fotoEPI").src = "";
+    document.getElementById("numeroEPI").innerText = "";
+    document.getElementById("nomeEPI").innerText = "Sorteio Cancelado";
+  }
+}
